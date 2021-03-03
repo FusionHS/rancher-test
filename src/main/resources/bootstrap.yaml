@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: rancher-test-gateway
+  cloud:
+    kubernetes:
+      secrets:
+        paths: /etc/secrets
+      config:
+        name: rancher-test-gateway
+        sources:
+          - name: rancher-test-gateway

@@ -1,0 +1,23 @@
+replicaCount: 1
+
+web:
+  name: rancher-test-gateway
+  image:
+    repository: gcr.io/fusionhs-web/example/rancher-test-gateway
+    tag: latest
+    pullPolicy: IfNotPresent
+  enviroment: prod
+  ingress:
+    issuer: letsencrypt-prod
+    domain: rancher-test.fusionhs.com
+    secretName: rancher-test-fusionhs-com-tls
+    path: /
+    serviceMesh:
+      enabled: true
+service:
+  type: ClusterIP
+  port: 8080
+serviceAccountName: rancher-test
+
+secrets:
+

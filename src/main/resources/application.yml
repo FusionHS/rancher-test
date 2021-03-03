@@ -1,0 +1,3 @@
+gateway:
+  webUrl: http://hello-kubernetes:8080
+trace-errors: true
